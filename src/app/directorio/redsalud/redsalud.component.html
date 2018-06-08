@@ -1,0 +1,23 @@
+<h4 class="p-3 mb-4 font-italic border-bottom">
+  Redes de salud
+</h4>
+<table class="table">
+    <thead class="thead-light">
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Red de Salud</th>
+        <th scope="col">Nombre</th>
+        <th scope="col">Cargo</th>
+        <th scope="col">Celular</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let per of persona; index as i">
+        <th scope="row">{{i+1}}</th>
+        <td>{{per.red}}</td>
+        <td>{{per.nombre}}</td>
+        <td>{{per.cargo}}</td>
+        <td>{{per.celular}}</td>
+      </tr>
+    </tbody>
+  </table>

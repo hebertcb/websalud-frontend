@@ -1,0 +1,14 @@
+@media (max-width: 575px) { 
+    #img img{
+        width: 100%;
+    }
+}
+
+.pdf-icon{
+    background-image: url("https://image.flaticon.com/icons/png/128/136/136522.png");
+    padding-left: 20px;
+    background-size: 20px 20px;
+    text-decoration: none;
+    background-repeat: no-repeat;
+    margin-right: 5px;
+}
