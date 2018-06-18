@@ -1,0 +1,30 @@
+<div class="card">
+  <div class="card-body">
+    <form #redForm="ngForm" (ngSubmit)="onSubmit(redForm)">
+      <input type="hidden" name="$key" ngModel [(ngModel)]="redesService.selectedRed.$key">
+      <div class="form-group">
+        <input type="text" class="form-control" name="red" ngModel
+          [(ngModel)]="redesService.selectedRed.red"
+          placeholder="Red de Salud">
+      </div>
+      <div class="form-group">
+          <input type="text" class="form-control" name="director" ngModel
+            [(ngModel)]="redesService.selectedRed.director"
+            placeholder="Director">
+      </div>
+      <div class="form-group">
+        <input type="text" class="form-control" name="celular" #celular="ngModel"
+          [(ngModel)]="redesService.selectedRed.celular"
+          placeholder="Celular">
+      </div>
+      <div class="form-group">
+        <button class="btn btn-primary mr-1" type="submit">
+            <i class="fas fa-plus-circle"></i> Agregar
+        </button>
+        <button class="btn btn-secondary" type="reset" (click)="resetForm(redForm)">
+            <i class="fas fa-sync-alt"></i> Resetear
+        </button>
+        </div>
+      </form>
+  </div>
+</div>
