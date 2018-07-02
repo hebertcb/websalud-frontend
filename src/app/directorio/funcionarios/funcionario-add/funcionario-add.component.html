@@ -1,0 +1,30 @@
+<div class="card">
+  <div class="card-body">
+    <form #funcForm="ngForm" (ngSubmit)="onSubmit(funcForm)">
+      <input type="hidden" name="id" ngModel [(ngModel)]="funcService.selectedFunc.id">
+      <div class="form-group">
+        <input type="text" class="form-control" name="nombre" ngModel
+          [(ngModel)]="funcService.selectedFunc.nombre"
+          placeholder="Nombre">
+      </div>
+      <div class="form-group">
+          <input type="text" class="form-control" name="dni" ngModel
+            [(ngModel)]="funcService.selectedFunc.dni"
+            placeholder="DNI">
+      </div>
+      <div class="form-group">
+        <select ngModel [(ngModel)]="funcService.selectedFunc.idsede" name="sede">
+          <option *ngFor="let sed of sedes" [value]="sed.id">{{sed.titulo}}</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <button class="btn btn-primary mr-1" type="submit">
+            <i class="fas fa-plus-circle"></i> Agregar
+        </button>
+        <button class="btn btn-secondary" type="reset" (click)="resetForm(funcForm)">
+            <i class="fas fa-sync-alt"></i> Resetear
+        </button>
+        </div>
+      </form>
+  </div>
+</div>

@@ -13,6 +13,8 @@ import { AseguramientoComponent } from './organo/aseguramiento/aseguramiento.com
 import { RedsaludComponent } from './directorio/redsalud/redsalud.component';
 import { LoginComponent } from './login/login.component';
 import { AuthGuard } from './guards/auth.guard';
+import { FuncionarioAddComponent } from './directorio/funcionarios/funcionario-add/funcionario-add.component';
+import { FuncionarioListComponent } from './directorio/funcionarios/funcionario-list/funcionario-list.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -24,6 +26,8 @@ const routes: Routes = [
     {path: 'institucional/estructura', component: EstructuraComponent},
     {path: 'institucional/marco-legal', component: MarcolegalComponent},
     {path: 'directorio/redes-de-salud', component: RedsaludComponent, canActivate:[AuthGuard]},
+    {path: 'directorio/funcionarios/funcionarios-list',component:FuncionarioListComponent},
+    {path: 'directorio/funcionarios/funcionarios-edit',component:FuncionarioAddComponent},
     {path: 'directorio/login', component: LoginComponent},
     {path: 'organo/aseguramiento-publico', component: AseguramientoComponent},
     {path: 'transparencia/documentos-de-gestion', component: DocumentosgestionComponent} 

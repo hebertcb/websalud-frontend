@@ -35,6 +35,9 @@ import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireAuthModule} from 'angularfire2/auth';
 import { environment } from '../environments/environment';
+import { FuncionarioAddComponent } from './directorio/funcionarios/funcionario-add/funcionario-add.component';
+import { FuncionarioListComponent } from './directorio/funcionarios/funcionario-list/funcionario-list.component';
+import { HttpClientModule } from '@angular/common/http';
 
 registerLocaleData(localePE);
 
@@ -56,7 +59,9 @@ registerLocaleData(localePE);
     DocumentosgestionComponent,
     RedListComponent,
     RedAddComponent,
-    LoginComponent
+    LoginComponent,
+    FuncionarioAddComponent,
+    FuncionarioListComponent
   ],
   imports: [
     BrowserModule,
@@ -66,6 +71,7 @@ registerLocaleData(localePE);
     AngularFireAuthModule,
     FormsModule,
     BrowserAnimationsModule,
+    HttpClientModule,
     ToastrModule.forRoot()    
   ],
   providers: [RedesService,AuthService,{ provide: LOCALE_ID, useValue: "es-PE" }],

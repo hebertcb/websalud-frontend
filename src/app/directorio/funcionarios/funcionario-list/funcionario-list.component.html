@@ -1,0 +1,30 @@
+<a class="btn btn-primary text-white" (click)="onAdd()">
+  <i class="fas fa-user-plus"></i> Agregar
+</a>
+<table class="table">
+  <thead class="thead-light">
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Funcionario</th>
+      <th scope="col">DNI</th>
+      <th scope="col">Sede</th>
+      <th scope="col"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let func of funcionarios; index as i">
+      <th scope="row">{{i+1}}</th>
+      <td>{{func.nombre}}</td>
+      <td>{{func.dni}}</td>
+      <td>{{func.sede}}</td>
+      <td>
+        <a class="btn btn-secondary text-white mr-1" (click)="onEdit(func)">
+          <i class="far fa-edit"></i>
+        </a>
+        <a class="btn btn-danger text-white" (click)="onDelete(func.id)">
+          <i class="fas fa-trash-alt"></i>
+        </a>
+      </td>
+    </tr>
+  </tbody>
+</table>
