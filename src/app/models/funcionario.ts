@@ -3,4 +3,5 @@ export class Funcionario {
     dni: number;
     nombre: string;
     sede: string;
+    idsede: number;
 }

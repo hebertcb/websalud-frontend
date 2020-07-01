@@ -18,7 +18,7 @@ export class LoginComponent implements OnInit {
     this.authService.loginGoogle()    
     .then((res) => {
       this.router.navigate(['/directorio/redes-de-salud']);
-      console.log('Estas logeado!!! :D');      
+      console.log('Estas logeado!!!');      
     }).catch( err => console.log(err.message));
   }
 

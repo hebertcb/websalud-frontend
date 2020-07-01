@@ -13,9 +13,9 @@ import { Sede } from '../../../models/sede';
 })
 export class FuncionarioAddComponent implements OnInit {
 
-  private sedes: Array<Sede> = [];
+  public sedes: Array<Sede> = [];
 
-  constructor(private funcService : FuncService, private toastr : ToastrService, private router: Router) { }
+  constructor(public funcService : FuncService, private toastr : ToastrService, private router: Router) { }
 
   ngOnInit() {    
     this.getSedes();
@@ -42,7 +42,7 @@ export class FuncionarioAddComponent implements OnInit {
       });
     }
     this.resetForm(autorForm);
-    this.toastr.success('Operación realizada con éxito', 'Autor Registered');
+    this.toastr.success('Operación realizada con éxito', 'Autor registrado');
   }
 
   resetForm(form : NgForm){

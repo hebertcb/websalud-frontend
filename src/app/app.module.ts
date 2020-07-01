@@ -1,11 +1,12 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { AppRoutingModule } from './app-routing.module';
 import { NgModule, LOCALE_ID } from '@angular/core';
 import localePE from '@angular/common/locales/es-PE';
 import { registerLocaleData } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
+
+import { AppRoutingModule } from './app-routing.module';
 
 //Components
 import { AppComponent } from './app.component';
@@ -31,15 +32,13 @@ import { RedesService } from './services/redes.service';
 import { AuthService } from './services/auth.service';
 
 //Firebase
-import { AngularFireModule } from 'angularfire2';
-import { AngularFireDatabaseModule } from 'angularfire2/database';
-import { AngularFireAuthModule} from 'angularfire2/auth';
+import { AngularFireModule } from '@angular/fire';
+import { AngularFireDatabaseModule } from '@angular/fire/database';
+import { AngularFireAuthModule} from '@angular/fire/auth';
 import { environment } from '../environments/environment';
 import { FuncionarioAddComponent } from './directorio/funcionarios/funcionario-add/funcionario-add.component';
 import { FuncionarioListComponent } from './directorio/funcionarios/funcionario-list/funcionario-list.component';
 import { HttpClientModule } from '@angular/common/http';
-
-registerLocaleData(localePE);
 
 @NgModule({
   declarations: [
@@ -72,7 +71,7 @@ registerLocaleData(localePE);
     FormsModule,
     BrowserAnimationsModule,
     HttpClientModule,
-    ToastrModule.forRoot()    
+    ToastrModule.forRoot()
   ],
   providers: [RedesService,AuthService,{ provide: LOCALE_ID, useValue: "es-PE" }],
   bootstrap: [AppComponent]

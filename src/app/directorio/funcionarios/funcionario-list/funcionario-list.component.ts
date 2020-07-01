@@ -11,7 +11,7 @@ import { Sede } from '../../../models/sede';
   styleUrls: ['./funcionario-list.component.css']
 })
 export class FuncionarioListComponent implements OnInit {
-  private funcionarios: Array<Funcionario> = [];
+  public funcionarios: Array<Funcionario> = [];
 
   constructor(private funcService : FuncService, private toastr : ToastrService, private router: Router) { }
 

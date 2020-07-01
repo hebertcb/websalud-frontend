@@ -12,7 +12,7 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class RedAddComponent implements OnInit {
 
-  constructor(private redesService: RedesService, private toastr: ToastrService) { }
+  constructor(public redesService: RedesService, private toastr: ToastrService) { }
 
   ngOnInit() {
     this.redesService.getRedes();
@@ -25,7 +25,7 @@ export class RedAddComponent implements OnInit {
       this.redesService.updateRed(form.value);
     
     this.resetForm(form);
-    this.toastr.success('Operación realizada con éxito', 'Red Registered');
+    this.toastr.success('Operación realizada con éxito', 'Red registrada');
   }
 
   resetForm(form : NgForm){

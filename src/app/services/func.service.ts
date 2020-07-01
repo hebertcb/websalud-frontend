@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Funcionario } from '../models/funcionario';
 import { concatMap } from 'rxjs/operators';
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -10,7 +11,7 @@ export class FuncService {
   autorList: Array<Funcionario> = [];
   selectedFunc: Funcionario = new Funcionario(); 
 
-  API_URL = 'http://127.0.0.1:8000/api';
+  API_URL = `${environment.apiUrl}/api`;
 
   constructor(private http: HttpClient) { }
 
