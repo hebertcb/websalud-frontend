@@ -13,36 +13,37 @@ import { Sede } from '../../../models/sede';
 })
 export class FuncionarioAddComponent implements OnInit {
 
-  public sedes: Array<Sede> = [];
+  public sedes: Array<String> = ["Sede Tacna","Sede Lima","Sede Puno"];
 
   constructor(public funcService : FuncService, private toastr : ToastrService, private router: Router) { }
 
-  ngOnInit() {    
-    this.getSedes();
+  ngOnInit() {
+    //this.getSedes();
   }
 
   getSedes(){
+    /*
     this.funcService.getSedes().subscribe((data:Array<Sede>) =>
       this.sedes = data
     );
+    */
   }
 
-  onSubmit(autorForm: NgForm){
-    console.log(autorForm.value);
-    if(autorForm.value.id == null){
-      this.funcService.insertFunc(autorForm.value).subscribe((response) => {
+  onSubmit(funcionarioForm: NgForm){
+    console.log(funcionarioForm.value);
+    if(funcionarioForm.value.id == null){
+      this.funcService.insertFunc(funcionarioForm.value).subscribe((response) => {
         console.log(response);
         this.router.navigate(["directorio/funcionarios/funcionarios-list"]);
       });
-    }else{
-      console.log('No null');      
-      this.funcService.updateFunc(autorForm.value.id,autorForm.value).subscribe((response) => {
+    }else{    
+      this.funcService.updateFunc(funcionarioForm.value.id,funcionarioForm.value).subscribe((response) => {
         console.log(response);
         this.router.navigate(["directorio/funcionarios/funcionarios-list"]);
       });
     }
-    this.resetForm(autorForm);
-    this.toastr.success('Operación realizada con éxito', 'Autor registrado');
+    this.resetForm(funcionarioForm);
+    this.toastr.success('Operación realizada con éxito', 'Funcionario registrado');
   }
 
   resetForm(form : NgForm){

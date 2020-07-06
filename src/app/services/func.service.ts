@@ -30,8 +30,9 @@ export class FuncService {
   deleteFunc(id){
     return this.http.delete(`${this.API_URL}/funcionarios/${id}/`);
   }
-
+  /*
   getSedes(){
     return this.http.get(`${this.API_URL}/sedes/`);
   }
+  */
 }

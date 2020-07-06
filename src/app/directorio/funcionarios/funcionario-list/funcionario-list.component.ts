@@ -21,6 +21,7 @@ export class FuncionarioListComponent implements OnInit {
 
   public getFuncionarios(){
     this.funcService.getFuncs().subscribe((dataf: Array<Funcionario>) => {
+      /*
       this.funcService.getSedes().subscribe((data: Array<Sede>) => {
         dataf.forEach(element =>{
           let n = +element.sede;          
@@ -28,7 +29,9 @@ export class FuncionarioListComponent implements OnInit {
           element.sede=data[n-1].titulo;         
         });
         this.funcionarios = dataf;
-      });     
+      });    
+      */ 
+     this.funcionarios = dataf;
       console.log(dataf);      
     });
   }
@@ -39,7 +42,7 @@ export class FuncionarioListComponent implements OnInit {
   }
 
   onDelete(id: string) {
-    if(confirm('¿Estas seguro que deseas elimiar este Profesor?')) {
+    if(confirm('¿Estas seguro que deseas elimiar este funcionario?')) {
       this.funcService.deleteFunc(id).subscribe((data: Array<Funcionario>) => {
         this.getFuncionarios();
         console.log(data);

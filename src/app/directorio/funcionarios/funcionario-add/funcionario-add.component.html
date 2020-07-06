@@ -1,20 +1,22 @@
 <div class="card">
   <div class="card-body">
-    <form #funcForm="ngForm" (ngSubmit)="onSubmit(funcForm)">
+    <form #funcForm="ngForm" (ngSubmit)="onSubmit(funcForm)" ngNativeValidate>
       <input type="hidden" name="id" ngModel [(ngModel)]="funcService.selectedFunc.id">
       <div class="form-group">
         <input type="text" class="form-control" name="nombre" ngModel
           [(ngModel)]="funcService.selectedFunc.nombre"
-          placeholder="Nombre">
+          placeholder="Nombre*"
+          required>
       </div>
       <div class="form-group">
-          <input type="text" class="form-control" name="dni" ngModel
+          <input type="number" class="form-control" name="dni" ngModel
             [(ngModel)]="funcService.selectedFunc.dni"
-            placeholder="DNI">
+            placeholder="DNI*"
+            required>
       </div>
       <div class="form-group">
-        <select ngModel [(ngModel)]="funcService.selectedFunc.idsede" name="sede">
-          <option *ngFor="let sed of sedes" [value]="sed.id">{{sed.titulo}}</option>
+        <select class="form-control" ngModel [(ngModel)]="funcService.selectedFunc.sede" name="sede" required>
+          <option *ngFor="let sed of sedes" [value]="sed">{{sed}}</option>
         </select>
       </div>
       <div class="form-group">
